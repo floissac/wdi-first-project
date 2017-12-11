@@ -8,20 +8,19 @@ html {
 }
 
 body {
-  background:
-  url(/Users/will/development/first-app/images/img1.jpg);
+  background: url(/Users/will/development/first-app/images/img1.jpg);
   width: 960px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 270px auto;
-  font-family: 'Aclonica';font-size: 10px;
-
+  margin: 100px auto;
+  font-family: 'Aclonica';
+  font-size: 10px;
 }
 img {
-  padding: 34px 30px 65px;
+  padding: 138px 41px 31px;
   display: block;
-  max-width:500px;
-  margin-left: -283px;
+  max-width: 310px;
+  margin-left: -177px;
   margin-top: 171px;
 
 

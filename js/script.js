@@ -3,18 +3,29 @@ $(() => {
 
   const $dropbtn = $('.dropbtn');
   const $dropdown = $('#myDropdown');
-  $dropbtn.on('click', dropDownSelect);
+  const $playerBars = $('.playerbars');
+  const $characterSelection = $('.characterSelection');
+  const $characters = $dropdown.find('a');
+  const $dropdownContent = $('a');
 
+  $dropbtn.on('click', dropDownSelect);
+  $characters.on('click', characterSelection);
+  $playerBars.hide();
   function dropDownSelect() {
     $dropdown.toggle();
     console.log('drop');
-  }
-
-
-
-  function characterSelection(){
 
   }
+
+  function characterSelection(e){
+    const choice = $(e.target).text();
+    const $img = $(`<img src="images/${choice}.png">`);
+    $characterSelection.append($img);
+    console.log(choice);
+    $dropdownContent.hide();
+    $playerBars.show();
+  }
+
 
 
 
