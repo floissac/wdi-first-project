@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My First Online Website</title>
-    <script type="text/javascript" src="./js/script.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <h1>My First Online Website</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Fight Club</title>
+  <script type="text/javascript" src="./js/script.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+</head>
+<body>
+  <div class="title">
+    <div class="logo">
+      <h1>
+      <img src="images/img2.png" alt="#">
+      </h1>
+    </div>
 
-  </body>
+  </div>
+
+  <div class="buttons">
+    <button id="attack" onclick="">Select Attack</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    <button id="counter" onclick="">Counter</button>
+  </div>
+
+  <div class="playerbars">
+
+    <div id="yourHealth"><div id="yourHealthBar"></div></div>
+    <div id="compHealth"><div id="compHealthBar"></div></div>
+  </div>
+
+
+
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Select Fighter</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+</div>
+</body>
 </html>

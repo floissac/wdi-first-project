@@ -1,3 +1,104 @@
-body{
-  background-color: pink;
+* {
+  box-sizing: border-box;
 }
+h1 {
+  color: #FFD700;
+}
+
+html {
+  width: 100%
+}
+
+body {
+  background:
+  url(/Users/will/development/first-app/images/img1.jpg);
+  width: 960px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50px auto;
+  font-family: 'Aclonica';font-size: 22px;
+
+}
+img {
+  padding: 34px 30px 65px;
+  display: block;
+  max-width:500px;
+  margin-left: -283px;
+
+
+}
+
+button {
+  background: #C0C0C0;
+  padding: 10px 25px;
+  margin-bottom: 15px;
+  display: block;
+}
+#player1 {
+  float: right;
+}
+
+#yourHealth, #compHealth {
+  position: relative;
+  height: 30px;
+  width: 250px;
+  border: #e29050 3px solid;
+  border-radius: 3px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+#yourHealthBar, #compHealthBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: lightgreen;
+}
+.playerbars{
+  position: fixed;
+  top: 4px;
+  left: 450px;
+}
+
+
+
+
+.dropbtn {
+  background-color: #c0c0c0;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #CD5C5C;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
