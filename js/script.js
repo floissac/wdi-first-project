@@ -1,19 +1,25 @@
+$(() => {
 
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  const $dropbtn = $('.dropbtn');
+  const $dropdown = $('#myDropdown');
+  $dropbtn.on('click', dropDownSelect);
+
+  function dropDownSelect() {
+    $dropdown.toggle();
+  }
+
+
+
+function characterSelection(){
+
 }
 
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
+
+  let yourHealth = 100;
+  let compHealth = 100;
+  const $yourHealthbar = $('#yourHealthBar');
+  let $compHealthBar = $('#compHealthBar');
+  let attackButton = $('#attack');
+});

@@ -27,7 +27,7 @@ img {
 
 }
 
-.attackbtn{
+#attack {
   float: right;
   background-color: #4CAF50;
   color: white;
@@ -74,7 +74,7 @@ img {
 .dropbtn:hover, .dropbtn:focus {
   background-color: #3e8e41;
 }
-.attackbtn:hover, .attackbutton:focus {
+#attack:hover, #attack:focus {
   background-color: #3e8e41;
 }
 
