@@ -147,7 +147,7 @@ h1 {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content li {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -187,15 +187,24 @@ h1 {
   z-index: 1;
 }
 
-.compdrop-content a {
+.compdrop-content li {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
+.myAttack-Content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-.dropdown a:hover {background-color: #f1f1f1}
-.compDropdown a:hover {background-color: #f1f1f1}
-.buttons a:hover {background-color: #f1f1f1}
+.dropdown li:hover {background-color: #f1f1f1}
+.compDropdown li:hover {background-color: #f1f1f1}
+.buttons li:hover {background-color: #f1f1f1}
 
 .show {display:block;}

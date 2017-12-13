@@ -5,8 +5,8 @@ $(() => {
   const $compDropButton = $('.compDropdownButton');
   const $compDrop = $('#compdrop');
   const $compCharacterSelection = $('.compCharacterSelection');
-  const $compCharacters = $compDrop.find('a');
-  const $compDropDownContent = $('a');
+  const $compCharacters = $compDrop.find('li');
+  // const $compDropDownContent = $('a');
 
   $compDropButton.on('click', compDownSelect);
   $compCharacters.on('click', compCharacterSelection);
@@ -16,6 +16,7 @@ $(() => {
     console.log('compDrop');
   }
   function compCharacterSelection(e) {
+    console.log(e.target);
     const choice = $(e.target).text();
     const $img = $(`<img src="images/compCharacterSelection/${choice}.png">`);
     $compCharacterSelection.append($img);
@@ -30,8 +31,8 @@ $(() => {
   const $dropdown = $('#myDropdown');
   const $playerBars = $('.playerbars');
   const $characterSelection = $('.characterSelection');
-  const $characters = $dropdown.find('a');
-  const $dropdownContent = $('a');
+  const $characters = $dropdown.find('li');
+  // const $dropdownContent = $('a');
 
   $dropbtn.on('click', dropDownSelect);
   $characters.on('click', characterSelection);
@@ -58,6 +59,10 @@ $(() => {
   const $yourHealthBar = $('#yourHealthBar');
   const $compHealthBar = $('#compHealthBar');
   const $attackButton = $('.attack');
+  const $myAttack = $('#myAttack');
+  const $attacks = $myAttack.find('li');
+  // const $attackDropContent = $('a');
+
 
   // <----change Health-------->
   function healthChange() {
@@ -68,16 +73,32 @@ $(() => {
   // <-----Attack------->
 
   $attackButton.on('click', attackSelect);
+  $attacks.on('click', attackChoice);
 
   function attackSelect(){
     console.log('attack');
-    $dropdownContent.hide();
-    $compDropDownContent.hide();
-    $dropbtn.hide();
-    invokeCompDamage();
-    healthChange();
-    invokeUserDamage();
+    $myAttack.toggle();
+
+    // $compDropDownContent.hide();
+    // $dropbtn.hide();
+    // invokeCompDamage();
+
+    // invokeUserDamage();
   }
+
+  function attackChoice(e){
+    console.log('in the attackChoice function');
+
+    const choice = $(e.target).text();
+    console.log('choice', choice);
+    $myAttack.toggle();
+
+    if (choice === 'Punch') {
+      invokeCompDamage();
+      healthChange();
+    }
+  }
+
   function invokeCompDamage() {
     compDamage();
   }
@@ -97,19 +118,5 @@ $(() => {
     if (move >= 3); {
       yourHealth -= Math.floor((Math.random()*9)+5);
     }
-
-    // youLose();
-    // youWin();
   }
-  // function youLose() {
-  //   if (yourHealth <= 0) {
-  //     alert('You Lose!');
-  //   }
-  // }
-  // function youWin() {
-  //   if (compHealth <= 0) {
-  //     alert('You Win!');
-  //   }
-  // }
-
 });
