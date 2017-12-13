@@ -1,14 +1,7 @@
 $(() => {
 
 
-  const $dropbtn = $('.dropbtn');
-  const $dropdown = $('#myDropdown');
-  const $playerBars = $('.playerbars');
-  const $characterSelection = $('.characterSelection');
-  const $characters = $dropdown.find('a');
-  const $dropdownContent = $('a');
-
-  // computer character selection
+  //<----------Computer Character Selection------->
   const $compDropButton = $('.compDropdownButton');
   const $compDrop = $('#compdrop');
   const $compCharacterSelection = $('.compCharacterSelection');
@@ -31,8 +24,15 @@ $(() => {
     $compDropButton.hide();
   }
 
+  //<------------user character Selection------------->
 
-  //<------------character Selection------------->
+  const $dropbtn = $('.dropbtn');
+  const $dropdown = $('#myDropdown');
+  const $playerBars = $('.playerbars');
+  const $characterSelection = $('.characterSelection');
+  const $characters = $dropdown.find('a');
+  const $dropdownContent = $('a');
+
   $dropbtn.on('click', dropDownSelect);
   $characters.on('click', characterSelection);
   $playerBars.hide();
@@ -52,21 +52,12 @@ $(() => {
     $dropdown.hide();
   }
 
-  //<----------Computer Character Selection------->
-
   // <----------Game Logic---------->
-
   let yourHealth = 100;
   let compHealth = 100;
   const $yourHealthBar = $('#yourHealthBar');
   const $compHealthBar = $('#compHealthBar');
   const $attackButton = $('.attack');
-  // const $buttons = $('.buttons');
-
-
-  // <------invoke fight---->
-
-
 
   // <----change Health-------->
   function healthChange() {
@@ -74,7 +65,7 @@ $(() => {
     $compHealthBar.css('width', compHealth + '%');
   }
 
-  // <-----Attack Select---------->
+  // <-----Attack------->
 
   $attackButton.on('click', attackSelect);
 
@@ -83,49 +74,42 @@ $(() => {
     $dropdownContent.hide();
     $compDropDownContent.hide();
     $dropbtn.hide();
-    compMove();
+    invokeCompDamage();
     healthChange();
+    invokeUserDamage();
   }
-
-  function compMove(id) {
-    const move = Math.floor((Math.random()*4)+1);
-    if (move <= 3) {
-      const savedCompMove = 'attack';
-      compDamage(id, savedCompMove);
-      yourDamage();
-    }
+  function invokeCompDamage() {
+    compDamage();
+  }
+  function invokeUserDamage(){
+    yourDamage();
   }
 
   // <----------Health Damage------------>
-
-  function compDamage(y, c) {
-    var move = Math.floor((Math.random()*9)+5);
-    if ( y === 'attack' && c === 'attack' && compHealth >= 10) {
-      compHealth -= 10;
-
-    } else if (move >= 3 && y === 'attack'); {
+  function compDamage() {
+    var move = 4;
+    if (move >= 3); {
       compHealth -= Math.floor((Math.random()*9)+5);
     }
   }
-  function yourDamage(d, e) {
-    var move = Math.floor((Math.random()*9)|+5);
-    if ( d === 'attack' && e === 'attack' && yourHealth >= 10) {
-      yourHealth -= 10;
-
-    } else if (move >= 3 && e === 'attack'); {
+  function yourDamage() {
+    var move = 4;
+    if (move >= 3); {
       yourHealth -= Math.floor((Math.random()*9)+5);
     }
-    youLose();
-    youWin();
+
+    // youLose();
+    // youWin();
   }
-  function youLose() {
-    if (yourHealth <= 0) {
-      alert('You Lose!');
-    }
-  }
-  function youWin() {
-    if (compHealth <= 0) {
-      alert('You Win!');
-    }
-  }
+  // function youLose() {
+  //   if (yourHealth <= 0) {
+  //     alert('You Lose!');
+  //   }
+  // }
+  // function youWin() {
+  //   if (compHealth <= 0) {
+  //     alert('You Win!');
+  //   }
+  // }
+
 });
