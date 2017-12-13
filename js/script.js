@@ -6,7 +6,6 @@ $(() => {
   const $compDrop = $('#compdrop');
   const $compCharacterSelection = $('.compCharacterSelection');
   const $compCharacters = $compDrop.find('li');
-  // const $compDropDownContent = $('a');
 
   $compDropButton.on('click', compDownSelect);
   $compCharacters.on('click', compCharacterSelection);
@@ -18,7 +17,7 @@ $(() => {
   function compCharacterSelection(e) {
     console.log(e.target);
     const choice = $(e.target).text();
-    const $img = $(`<img src="images/compCharacterSelection/${choice}.png">`);
+    const $img = $(`<img src="images/compCharacterSelection/${choice}.png" class="animated">`);
     $compCharacterSelection.append($img);
     console.log(choice);
     $compDrop.hide();
@@ -45,7 +44,7 @@ $(() => {
 
   function characterSelection(e){
     const choice = $(e.target).text();
-    const $img = $(`<img src="images/characterSelection/${choice}.png" class="animated">`);
+    const $img = $(`<img src="images/characterSelection/${choice}.png" class="animated" class="animated">`);
     $characterSelection.append($img);
     console.log(choice);
     $playerBars.show();
@@ -61,8 +60,6 @@ $(() => {
   const $attackButton = $('.attack');
   const $myAttack = $('#myAttack');
   const $attacks = $myAttack.find('li');
-  // const $attackDropContent = $('a');
-
 
   // <----change Health-------->
   function healthChange() {
@@ -78,45 +75,94 @@ $(() => {
   function attackSelect(){
     console.log('attack');
     $myAttack.toggle();
-
-    // $compDropDownContent.hide();
-    // $dropbtn.hide();
-    // invokeCompDamage();
-
-    // invokeUserDamage();
   }
 
   function attackChoice(e){
     console.log('in the attackChoice function');
+    $('.characterSelection img').addClass('shake');
 
     const choice = $(e.target).text();
     console.log('choice', choice);
     $myAttack.toggle();
 
     if (choice === 'Punch') {
-      invokeCompDamage();
+      invokeCompDamageP();
+      invokeUserDamageP();
       healthChange();
+      $('.characterSelection img').addClass('wobble');
+      $('.compCharacterSelection img').addClass('rubberBand');
+
+    } else if (choice === 'Kick') {
+      invokeCompDamageK();
+      invokeUserDamagek();
+      healthChange();
+      $('.compCharacterSelection img').addClass('jello');
+      $('.characterSelection img').addClass('wobble');
+
+    } else if (choice === 'Combo') {
+      invokeCompDamageC();
+      invokeUserDamageC();
+      healthChange();
+      $('.characterSelection img').addClass('jello');
+      $('.compCharacterSelection img').addClass('shake');
     }
   }
 
-  function invokeCompDamage() {
-    compDamage();
+  // <---hit variation invoke---->
+  function invokeCompDamageP() {
+    compDamagePunch();
   }
-  function invokeUserDamage(){
-    yourDamage();
+  function invokeUserDamageP(){
+    yourDamagePunch();
+  }
+  function invokeCompDamageK() {
+    compDamageKick();
+  }
+  function invokeUserDamagek(){
+    yourDamageKick();
+  }
+  function invokeCompDamageC() {
+    compDamageCombo();
+  }
+  function invokeUserDamageC(){
+    yourDamageCombo();
   }
 
-  // <----------Health Damage------------>
-  function compDamage() {
+  // <----------Various Health Damages------------>
+  function compDamagePunch() {
     var move = 4;
     if (move >= 3); {
-      compHealth -= Math.floor((Math.random()*9)+5);
+      compHealth -= 10;
     }
   }
-  function yourDamage() {
+  function yourDamagePunch() {
     var move = 4;
     if (move >= 3); {
-      yourHealth -= Math.floor((Math.random()*9)+5);
+      yourHealth -= Math.floor((Math.random()*10)+5);
+    }
+  }
+  function compDamageKick() {
+    var move = 4;
+    if (move >= 3); {
+      compHealth -= 14;
+    }
+  }
+  function yourDamageKick() {
+    var move = 4;
+    if (move >= 3); {
+      yourHealth -= Math.floor((Math.random()*15)+5);
+    }
+  }
+  function compDamageCombo() {
+    var move = 4;
+    if (move >= 3); {
+      compHealth -= Math.floor((Math.random()*30)+9);
+    }
+  }
+  function yourDamageCombo() {
+    var move = 4;
+    if (move >= 3); {
+      yourHealth -= Math.floor((Math.random()*25)+9);
     }
   }
 });

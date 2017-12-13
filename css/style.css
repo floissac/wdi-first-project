@@ -18,24 +18,19 @@ main {
   max-width: 1200px;
   margin: 0 auto;
 }
+.start-screen {
+  background-color: pink;
+  text-align: center;
+}
+.start-button {
+
+}
+
 .characterSelection {
   width: 50%;
-  /* padding: 155px 41px 0px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  max-width: 515px; */
 }
 .compCharacterSelection {
   width: 50%;
-  /* padding: 6px 18px 42px;
-  display: flex;
-  flex-direction: column;
-  max-width: 670px;
-  margin: -599px;
-  float: right;
-  flex-wrap: nowrap;
-  flex-box */
 }
 
 .compCharacterSelection img {
@@ -68,6 +63,9 @@ main {
 h1 {
   color: #DC143C;
   font-family: 'Aclonica';
+  text-align: center;
+}
+h2 {
   text-align: center;
 }
 
