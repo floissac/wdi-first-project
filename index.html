@@ -6,9 +6,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/script.js"></script>
   <link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
   <main>
@@ -17,11 +19,13 @@
       <h1>ULTIMATE MEGA DEATH GAME</h1>
     </div>
 
-    <!-- <div class="start-screen">
-    <h2>Ultimate Mega Death Game<br>
-    Where your favourtite Cartoon characters have an epic fight till the death.<br>There are 3 fierce warrriors for you to select as your character and up to 3<br>blood-thirsty opponents you can choose to face.</h2>
-    <button class="start-button">START</button>
-    </div> -->
+    <div class="start-screen">
+      <h2>Ultimate Mega Death Game</h2>
+      <h3>The rules:<br></h3>
+
+      <h3>You are encouraged to kick, punch, or a combination of both<br>to take down your opponent before they take you down.<br>There are 3 fierce warrriors for you to select as your character and up to 3<br>blood-thirsty opponents you can choose to face.<br>Press start to play</h3>
+      <button class="start-button">START</button>
+    </div>
 
     <!-- Player bars -->
     <div class="info-bar">
@@ -60,10 +64,12 @@
     </div>
     <!-- Character selection -->
 
-      <div class="main-characters">
-        <div class="characterSelection"></div>
-        <div class="compCharacterSelection"></div>
+    <div class="main-characters">
+      <div class="characterSelection">
+
       </div>
+      <div class="compCharacterSelection"></div>
+    </div>
 
     <!-- Attack button -->
     <div class="buttons">
@@ -74,6 +80,13 @@
           <li>Kick</li>
           <li>Combo</li>
         </ul>
+          <!---alerts---->
+<div class="gameOver">
+  <button class="reset"></button>
+
+</div>
+
+
 
       </div>
     </div>

@@ -1,12 +1,23 @@
 $(() => {
 
-
+  // <---------start button------>
+  const $title = $('.title');
+  const $startScreen = $('.start-screen');
+  const $startButton = $('.start-button');
+  $startButton.on('click', startBtn);
+  function startBtn(){
+    console.log('startbtn');
+    $startButton.hide();
+    $startScreen.hide();
+    $title.show();
+    $dropbtn.show();
+    $compDropButton.show();
+  }
   //<----------Computer Character Selection------->
   const $compDropButton = $('.compDropdownButton');
   const $compDrop = $('#compdrop');
   const $compCharacterSelection = $('.compCharacterSelection');
   const $compCharacters = $compDrop.find('li');
-
   $compDropButton.on('click', compDownSelect);
   $compCharacters.on('click', compCharacterSelection);
 
@@ -31,7 +42,6 @@ $(() => {
   const $playerBars = $('.playerbars');
   const $characterSelection = $('.characterSelection');
   const $characters = $dropdown.find('li');
-  // const $dropdownContent = $('a');
 
   $dropbtn.on('click', dropDownSelect);
   $characters.on('click', characterSelection);
@@ -44,12 +54,13 @@ $(() => {
 
   function characterSelection(e){
     const choice = $(e.target).text();
-    const $img = $(`<img src="images/characterSelection/${choice}.png" class="animated" class="animated">`);
+    const $img = $(`<img src="images/characterSelection/${choice}.png" class="animated">`);
     $characterSelection.append($img);
     console.log(choice);
     $playerBars.show();
     $dropbtn.hide();
     $dropdown.hide();
+    $attackButton.show();
   }
 
   // <----------Game Logic---------->
@@ -80,7 +91,7 @@ $(() => {
   function attackChoice(e){
     console.log('in the attackChoice function');
     $('.characterSelection img').addClass('shake');
-
+    $('.compCharacterSelection img').addClass('wobble');
     const choice = $(e.target).text();
     console.log('choice', choice);
     $myAttack.toggle();
@@ -140,6 +151,7 @@ $(() => {
     if (move >= 3); {
       yourHealth -= Math.floor((Math.random()*10)+5);
     }
+
   }
   function compDamageKick() {
     var move = 4;
@@ -165,4 +177,8 @@ $(() => {
       yourHealth -= Math.floor((Math.random()*25)+9);
     }
   }
+  $title.hide();
+  $dropbtn.hide();
+  $compDropButton.hide();
+  $attackButton.hide();
 });
