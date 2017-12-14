@@ -13,6 +13,7 @@ $(() => {
     $dropbtn.show();
     $compDropButton.show();
   }
+
   //<----------Computer Character Selection------->
   const $compDropButton = $('.compDropdownButton');
   const $compDrop = $('#compdrop');
@@ -115,11 +116,16 @@ $(() => {
       invokeCompDamageC();
       invokeUserDamageC();
       healthChange();
-      $('.characterSelection img').addClass('jello');
-      $('.compCharacterSelection img').addClass('shake');
+      Animation('jello', 'shake');
     }
   }
+  function Animation(class1, class2) {
+    $('.characterSelection img').addClass(class1);
+    setTimeout($('.characterSelection img').removeClass(class1), 1000);
 
+    $('.compCharacterSelection img').addClass(class2);
+    setTimeout($('.compCharacterSelection img').removeClass(class2), 1000);
+  }
   // <---hit variation invoke---->
   function invokeCompDamageP() {
     compDamagePunch();
@@ -167,7 +173,7 @@ $(() => {
   function yourDamageKick() {
     var move = 4;
     if (move >= 3); {
-      yourHealth -= Math.floor((Math.random()*90)+5);
+      yourHealth -= Math.floor((Math.random()*40)+5);
     }
     youWin();
     youLose();
@@ -175,7 +181,7 @@ $(() => {
   function compDamageCombo() {
     var move = 4;
     if (move >= 3); {
-      compHealth -= Math.floor((Math.random()*30)+9);
+      compHealth -= Math.floor((Math.random()*40)+5);
     }
     youWin();
     youLose();
@@ -216,12 +222,9 @@ $(() => {
   function youDied(){
     location.reload();
   }
-  // function youWon(){
-  //   // location.reload();
-  // }
 
   function youLose() {
-    if (yourHealth <= 0) {
+    if (yourHealth <= 0 && compHealth >=1) {
       $gameOver.show();
       $attackButton.hide();
       $playerBars.hide();
@@ -229,7 +232,7 @@ $(() => {
 
   }
   function youWin() {
-    if (compHealth <= 0) {
+    if (compHealth <= 0 && yourHealth >=1) {
       $winner.show();
       $attackButton.hide();
       $playerBars.hide();

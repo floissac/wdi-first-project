@@ -20,17 +20,17 @@ main {
 }
 .gameOver{
   display: none;
-  background-color: pink;
+  /* background-color: pink; */
   text-align: center;
 }
 .youWin{
   display: none;
-  background-color: pink;
+  /* background-color: pink; */
   text-align: center;
 }
 p {
   font-family: 'Bahiana';
-  font-size: 20px;
+  font-size: 25px;
 }
 .start-screen {
   /* background-color: pink; */
@@ -97,9 +97,12 @@ h3 {
 }
 
 .buttons {
+  position: absolute;
   overflow: auto;
   display: inline-block;
   float: right;
+  top: 145px;
+  left: calc(50% - 40px);
 }
 
 .attack {
@@ -159,6 +162,18 @@ h3 {
   background-color: #FF0000;
 
 }
+.quit:hover, .quit:focus {
+  background-color: #FF0000;
+}
+.reset:hover, .reset:focus {
+  background-color: #FF0000;
+}
+.goBack:hover, .goBack:focus {
+  background-color: #FF0000;
+}
+.restart:hover, .restart:focus {
+  background-color: #FF0000;
+}
 
 .dropdown {
   position: relative;
@@ -177,9 +192,13 @@ h3 {
 
 .dropdown-content li {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 0px;
   text-decoration: none;
   display: block;
+  font-family: 'Aclonica';
+  text-align: center;
+  cursor: pointer;
+  justify-content: left;
 }
 .info-bar{
   display: flex;
@@ -213,17 +232,21 @@ h3 {
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  margin-top: 50px;
 }
 
 .compdrop-content li {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 0px;
   text-decoration: none;
   display: block;
+  font-family: 'Aclonica';
+  justify-content: left;
+  cursor: pointer;
+
 }
 .myAttack-Content {
   display: none;
-  position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   overflow: auto;
@@ -231,6 +254,40 @@ h3 {
   z-index: 1;
   cursor: pointer;
 
+}
+
+.restart {
+  background-color: #B22222;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.goBack {
+  background-color: #B22222;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.reset {
+  background-color: #B22222;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.quit {
+  background-color: #B22222;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdown li:hover {background-color: #f1f1f1}
