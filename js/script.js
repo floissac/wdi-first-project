@@ -103,6 +103,7 @@ $(() => {
       $('.characterSelection img').addClass('wobble');
       $('.compCharacterSelection img').addClass('rubberBand');
 
+
     } else if (choice === 'Kick') {
       invokeCompDamageK();
       invokeUserDamagek();
@@ -138,47 +139,105 @@ $(() => {
   function invokeUserDamageC(){
     yourDamageCombo();
   }
-
   // <----------Various Health Damages------------>
   function compDamagePunch() {
     var move = 4;
     if (move >= 3); {
       compHealth -= 10;
     }
+    youWin();
+    youLose();
   }
   function yourDamagePunch() {
     var move = 4;
     if (move >= 3); {
       yourHealth -= Math.floor((Math.random()*10)+5);
     }
-
+    youWin();
+    youLose();
   }
   function compDamageKick() {
     var move = 4;
     if (move >= 3); {
       compHealth -= 14;
     }
+    youWin();
+    youLose();
   }
   function yourDamageKick() {
     var move = 4;
     if (move >= 3); {
-      yourHealth -= Math.floor((Math.random()*15)+5);
+      yourHealth -= Math.floor((Math.random()*90)+5);
     }
+    youWin();
+    youLose();
   }
   function compDamageCombo() {
     var move = 4;
     if (move >= 3); {
       compHealth -= Math.floor((Math.random()*30)+9);
     }
+    youWin();
+    youLose();
   }
   function yourDamageCombo() {
     var move = 4;
     if (move >= 3); {
       yourHealth -= Math.floor((Math.random()*25)+9);
     }
+    youWin();
+    youLose();
+  }
+  // <---game resets----->
+  const $gameOver = $('.gameOver');
+  const $restart = $('.restart');
+  const $goBack = $('.goBack');
+
+  $restart.on('click', tryAgain);
+  $goBack.on('click', youDied);
+
+  const $winner = $('.youWin');
+  const $restartWin = $('.reset');
+  const $quit = $('.quit');
+
+  $restartWin.on('click', tryAgain);
+  $quit.on('click', youDied);
+
+  function tryAgain(){
+    $attackButton.show();
+    $playerBars.show();
+    yourHealth = 100;
+    compHealth = 100;
+    healthChange();
+    $gameOver.hide();
+    $winner.hide();
+  }
+
+  function youDied(){
+    location.reload();
+  }
+  // function youWon(){
+  //   // location.reload();
+  // }
+
+  function youLose() {
+    if (yourHealth <= 0) {
+      $gameOver.show();
+      $attackButton.hide();
+      $playerBars.hide();
+    }
+
+  }
+  function youWin() {
+    if (compHealth <= 0) {
+      $winner.show();
+      $attackButton.hide();
+      $playerBars.hide();
+    }
   }
   $title.hide();
   $dropbtn.hide();
   $compDropButton.hide();
   $attackButton.hide();
+
 });

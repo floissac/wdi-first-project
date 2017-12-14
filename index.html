@@ -7,10 +7,11 @@
   <script type="text/javascript" src="./js/script.js"></script>
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="./css/animate.css">
   <link rel="stylesheet" href="./css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bahiana" rel="stylesheet">
 </head>
 <body>
   <main>
@@ -22,11 +23,21 @@
     <div class="start-screen">
       <h2>Ultimate Mega Death Game</h2>
       <h3>The rules:<br></h3>
+      <!---alerts---->
 
       <h3>You are encouraged to kick, punch, or a combination of both<br>to take down your opponent before they take you down.<br>There are 3 fierce warrriors for you to select as your character and up to 3<br>blood-thirsty opponents you can choose to face.<br>Press start to play</h3>
       <button class="start-button">START</button>
     </div>
-
+    <div class="gameOver">
+      <p>You died you noob! Press the button to try again!<br>Or press quit to go back to the start menu</p>
+      <button class="restart">Retry</button>
+      <button class="goBack">Quit</button>
+    </div>
+    <div class="youWin">
+      <p>YOU WIN!<br>You are the Ultimate Mega Death Fighter!<br>Press the quit button to leave, or the restart button to have another go!</p>
+      <button class="reset">Restart</button>
+      <button class="quit">Quit</button>
+    </div>
     <!-- Player bars -->
     <div class="info-bar">
       <!---player lives--->
@@ -65,9 +76,7 @@
     <!-- Character selection -->
 
     <div class="main-characters">
-      <div class="characterSelection">
-
-      </div>
+      <div class="characterSelection"></div>
       <div class="compCharacterSelection"></div>
     </div>
 
@@ -80,14 +89,6 @@
           <li>Kick</li>
           <li>Combo</li>
         </ul>
-          <!---alerts---->
-<div class="gameOver">
-  <button class="reset"></button>
-
-</div>
-
-
-
       </div>
     </div>
 
